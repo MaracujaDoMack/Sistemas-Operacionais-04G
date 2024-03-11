@@ -1,0 +1,5 @@
+![WhatsApp Image 2024-03-05 at 5 30 23 PM](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/14e7243d-111b-4bf2-96ea-fc14bc0d5776)
+![WhatsApp Image 2024-03-05 at 5 31 14 PM](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/6779ee40-5094-4f95-a868-1b0631ab43e5)
+![WhatsApp Image 2024-03-05 at 5 31 23 PM](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/af260196-4d81-4cb2-8aa3-7b8b1a94c75b)
+![WhatsApp Image 2024-03-11 at 2 56 58 PM](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/197d666d-2fa5-4c61-a08e-534472ab9902)
+![WhatsApp Image 2024-03-11 at 3 44 24 PM](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/ade7d729-241c-48df-ae8b-42704b27be82)
