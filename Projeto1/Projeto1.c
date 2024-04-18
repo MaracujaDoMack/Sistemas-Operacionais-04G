@@ -1,51 +1,93 @@
+#include <malloc.h>
+#include <pthread.h>
+#include <semaphore.h>
 #include <stdio.h>
-#include <stdbool.h>
+#include <stdlib.h>
+#include <unistd.h>
 
+#define _GNU_SOURCE
+#define MAX_CAPACITY 50
 #define TRAVEL_TIME 10
 
-int main()
-{
+typedef struct {
+    int timeArrived;
+    int personDirection;
+} Person;
 
-    int n;
-    scanf("%d", &n);
+int lastMoment = 0;
+int currentDirection = -1;
+sem_t directionSem;
 
-    if(n < 0) return 0;
+void *threadFunction(void *argument) {
+    Person *person = (Person *)argument;
+    int finishTime = person->timeArrived + TRAVEL_TIME;
 
-    struct Escalator{
-        int t, d;
-        bool hasBeenCounted;
-    } e[n];
+    sem_wait(&directionSem);
 
-    int i;
-    for(i = 0; i < n; i++){
-        scanf("%d%d",&e[i].t, & e[i].d);
-        e[i].hasBeenCounted = false;
+    if (currentDirection == -1) {
+        currentDirection = person->personDirection;
     }
 
-    int acm = e[0].t, total = 0, nextIndex = 0;
-    bool hasFoundNextIndex = 0;
-
-    int j;
-    for(i = nextIndex; i < n; i++){
-        if(e[i].hasBeenCounted == true) break;
-        acm += TRAVEL_TIME;
-        e[i].hasBeenCounted = true;
-        for(j = i+1; j < n; j++){
-            if(e[j].d != e[i].d && !hasFoundNextIndex){
-                nextIndex = j;
-                hasFoundNextIndex = true;
-            }
-            else if(e[j].t <= acm && e[j].d == e[i].d && !e[j].hasBeenCounted){
-                acm = e[j].t + TRAVEL_TIME;
-                e[j].hasBeenCounted = true;
-            }
-        }
-        total+=acm;
-        if(!hasFoundNextIndex) break;
-        acm = 0;
-        hasFoundNextIndex = false;
+    if (finishTime > lastMoment && (person->personDirection == currentDirection || currentDirection == -1)) {
+        lastMoment = finishTime;
+        currentDirection = -1;
     }
 
-    printf("\nTempo gasto: %d segundos\n", total);
+    sem_post(&directionSem);
 
+    free(person);
+    return NULL;
+}
+
+int main() {
+  
+    printf("Programa iniciado!\n\n");
+
+    int amount = 0;
+    pthread_t threadsVector[MAX_CAPACITY];
+    Person peopleVector[MAX_CAPACITY];
+    FILE *input, *output;
+
+    input = fopen("input.txt", "r");
+    output = fopen("output.txt", "w");
+    if (input == NULL || output == NULL) {
+        printf("Erro! Arquivos não foram abertos corretamente!\n\n");
+        return 1;
+    }
+
+    sem_init(&directionSem, 0, 1);
+
+    fscanf(input, "%d", &amount);
+
+    if (amount < 1 || amount > MAX_CAPACITY) {
+        printf("Erro! Quantidade de pessoas inválida!\n\n");
+        return 1;
+    }
+
+    for (int i = 0; i < amount; i++) {
+        fscanf(input, "%d %d", &peopleVector[i].timeArrived, &peopleVector[i].personDirection);
+    }
+    fclose(input);
+
+    currentDirection = peopleVector[0].personDirection;
+
+    for (int i = 0; i < amount; i++) {
+        Person *newPerson = (Person *)malloc(sizeof(Person));
+        newPerson->timeArrived = peopleVector[i].timeArrived;
+        newPerson->personDirection = peopleVector[i].personDirection;
+        pthread_create(&threadsVector[i], NULL, threadFunction, (void *)newPerson);
+    }
+
+    for (int i = 0; i < amount; i++) {
+        pthread_join(threadsVector[i], NULL);
+    }
+
+    fprintf(output, "Tempo gasto: %d segundos\n", lastMoment);
+    fclose(output);
+
+    sem_destroy(&directionSem);
+
+    printf("Programa finalizado!");
+
+    return 0;
 }
