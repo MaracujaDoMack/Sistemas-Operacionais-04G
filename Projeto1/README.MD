@@ -18,3 +18,7 @@ Todas os testes e seus respectivos resultados propostos estão em formato .txt p
 ## Resolvendo por PROCESSOS
 
 ### Estratégia: 
+
+## Exemplos de Inputs e Outputs
+
+TIRA O PRINT DA EXECUÇÃO DE ALGUNS INPUTS E OUTPUTS GUSTAVÃO
