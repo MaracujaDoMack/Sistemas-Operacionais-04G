@@ -10,31 +10,35 @@ typedef struct {
   int personDirection;
 } Person;
 
-int lastMoment = 0;
-int currentDirection = -1;
-pthread_mutex_t lock;
+int waitVector[MAX_CAPACITY];
+int lastMoment = 0, currentDirection = -1, currentIndex = 0, hasWaited = 0;
 
 void *threadFunction(void *argument) {
 
   Person *person = (Person *)argument;
-  int arrivalTime = person->timeArrived;
-  int direction = person->personDirection;
 
-  pthread_mutex_lock(&lock);
-
-  if (lastMoment == 0 && currentDirection == -1) {
-    currentDirection = direction;
-    lastMoment = arrivalTime + TRAVEL_TIME;
+  if(currentDirection == -1){
+    currentDirection = person->personDirection;
+    lastMoment = person->timeArrived + TRAVEL_TIME;
   }
-
-  if (arrivalTime < lastMoment && direction == currentDirection) {
-    lastMoment = arrivalTime + TRAVEL_TIME;
-  } else {
-    // alguma função que espera
-    lastMoment += TRAVEL_TIME;
+  else if(person->timeArrived < lastMoment && person->personDirection == currentDirection){
+    lastMoment = person->timeArrived + TRAVEL_TIME;
   }
-
-  pthread_mutex_unlock(&lock);
+  else{
+    if(!hasWaited){
+      hasWaited = 1;
+      waitVector[currentIndex++] = person->timeArrived + TRAVEL_TIME;
+    }
+    else{
+      for(int i = 0; i < currentIndex; i++){
+        if(person->timeArrived < waitVector[i]){
+          waitVector[i] = person->timeArrived + TRAVEL_TIME;
+          return NULL;
+        }
+      }
+      waitVector[currentIndex++] = person->timeArrived + TRAVEL_TIME;
+    }
+  }
 
   free(person);
   return NULL;
@@ -67,8 +71,6 @@ int main() {
   }
   fclose(input);
 
-  pthread_mutex_init(&lock, NULL);
-
   for (int i = 0; i < amount; i++) {
     Person *newPerson = (Person *)malloc(sizeof(Person));
     newPerson->timeArrived = peopleVector[i].timeArrived;
@@ -80,10 +82,14 @@ int main() {
     pthread_join(threadsVector[i], NULL);
   }
 
+  if(hasWaited){
+    for(int i = 0; i < currentIndex; i++){
+      lastMoment+=10;
+    }
+  }
+
   fprintf(output, "Tempo gasto: %d segundos\n", lastMoment);
   fclose(output);
-
-  pthread_mutex_destroy(&lock);
 
   printf("Programa finalizado!");
 
