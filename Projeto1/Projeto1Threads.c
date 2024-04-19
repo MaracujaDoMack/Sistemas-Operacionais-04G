@@ -5,23 +5,25 @@
 #define MAX_CAPACITY 10000
 #define TRAVEL_TIME 10
 
+// struct para as pessoas que entrarão na escada rolante
 typedef struct {
   int timeArrived;
   int personDirection;
 } Person;
 
-int waitVector[MAX_CAPACITY];
+int waitVector[MAX_CAPACITY]; // vetor das pessoas a esperar
 int lastMoment = 0, currentDirection = -1, currentIndex = 0, hasWaited = 0;
 
+// função da thread
 void *threadFunction(void *argument) {
 
   Person *person = (Person *)argument;
 
-  if(currentDirection == -1){
+  if(currentDirection == -1){ // escada parada
     currentDirection = person->personDirection;
     lastMoment = person->timeArrived + TRAVEL_TIME;
   }
-  else if(person->timeArrived < lastMoment && person->personDirection == currentDirection){
+  else if(person->timeArrived < lastMoment && person->personDirection == currentDirection){ // pessoa chegou a tempo e está na mesma direção
     lastMoment = person->timeArrived + TRAVEL_TIME;
   }
   else{
@@ -36,7 +38,7 @@ void *threadFunction(void *argument) {
           return NULL;
         }
       }
-      waitVector[currentIndex++] = person->timeArrived + TRAVEL_TIME;
+      waitVector[currentIndex++] = person->timeArrived + TRAVEL_TIME; // entrará no vetor de espera
     }
   }
 
@@ -75,7 +77,7 @@ int main() {
     Person *newPerson = (Person *)malloc(sizeof(Person));
     newPerson->timeArrived = peopleVector[i].timeArrived;
     newPerson->personDirection = peopleVector[i].personDirection;
-    pthread_create(&threadsVector[i], NULL, threadFunction, (void *)newPerson);
+    pthread_create(&threadsVector[i], NULL, threadFunction, (void *)newPerson); // chamada das threads
   }
 
   for (int i = 0; i < amount; i++) {
