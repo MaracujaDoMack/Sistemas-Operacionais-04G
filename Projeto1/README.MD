@@ -8,7 +8,7 @@ Esse projeto consiste em criar um sistema que gerencie o movimento de uma escada
 
 COLOCA AQUI O PASSO A PASSO GUSTAVÃO
 
-Todas os testes propostos estão em formato .txt para serem testados!
+Todas os testes e seus respectivos resultados propostos estão em formato .txt para serem testados (input e output)!
 
 ## Resolvendo por THREADS
 
