@@ -6,7 +6,22 @@ Esse projeto consiste em criar um sistema que gerencie o movimento de uma escada
 
 ## Como compilar o código
 
-COLOCA AQUI O PASSO A PASSO GUSTAVÃO
+Primeiramente é necessário instalar o compilador gcc com o comando:
+
+sudo dnf install gcc
+
+Depois é necessario compilar os arquivos com o comando:
+
+gcc -o [nome_do executavel] [nome_do_arquivo]
+gcc -o proj Projeto1Processos.c
+gcc -o proj Projeto1Threads.c
+
+O ultimo passo seria executar o programa:
+
+./[nome_do_executavel]
+
+./proj
+
 
 Todas os testes e seus respectivos resultados propostos estão em formato .txt para serem testados (input e output)!
 
