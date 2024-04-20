@@ -14,15 +14,17 @@ Depois é necessario compilar os arquivos com o comando:
 
 gcc -o [nome_do executavel] [nome_do_arquivo]
 
-gcc -o proj Projeto1Processos.c
+gcc -o exe1 Projeto1Processos.c
 
-gcc -o proj Projeto1Threads.c
+gcc -o exe2 Projeto1Threads.c
 
 O ultimo passo seria executar o programa:
 
 ./[nome_do_executavel]
 
-./proj
+./exe1
+
+./exe2
 
 
 Todas os testes e seus respectivos resultados propostos estão em formato .txt para serem testados (input e output)!
