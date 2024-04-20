@@ -84,7 +84,7 @@ int main() {
   }
 
   if(hasWaited){
-    for(int i = 0; i < currentIndex; i++){
+    for(int i = 0; i <= currentIndex; i++){
       lastMoment+=10;
     }
   }
