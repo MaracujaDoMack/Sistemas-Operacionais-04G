@@ -39,6 +39,7 @@ TIRA O PRINT DA EXECUÇÃO DE ALGUNS INPUTS E OUTPUTS GUSTAVÃO
 ## Resolvendo por PROCESSOS
 
 ### Estratégia: 
+ A ideia para resolver o problema usando processos foi parecida com a de threads. Primeiramente construímos a estrutura de processos com o fork e a criação do processo filho a partir do processo pai, então construímos uma função para que o processo filho execute e calcule o valor inicial do tempo final, então esse valor será recebido pelo processo pai a fim de calcular os valores que faltam (valores no vetor de espera) e escrever no arquivo de saída.
 
 ## Exemplos de Inputs e Outputs com PROCESSOS
 
