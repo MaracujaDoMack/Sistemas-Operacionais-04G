@@ -55,7 +55,7 @@ int main() {
   FILE *input, *output;
 
   input = fopen("./input/E_1");
-  output = fopen("output.txt", "w");
+  output = fopen("./output/E_1");
   if (input == NULL || output == NULL) {
     printf("Erro! Arquivos não foram abertos corretamente!\n\n");
     return 1;
