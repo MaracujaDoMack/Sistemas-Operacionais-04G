@@ -53,8 +53,8 @@ int main() {
   Person peopleVector[MAX_CAPACITY];
   FILE *input, *output;
 
-  input = fopen("./input/E_1", "r");
-  output = fopen("./output/E_1", "w");
+  input = fopen("./input/E_2", "r");
+  output = fopen("./output/E_2", "w");
   if (input == NULL || output == NULL) {
     printf("Erro! Arquivos não foram abertos corretamente!\n\n");
     return 1;
