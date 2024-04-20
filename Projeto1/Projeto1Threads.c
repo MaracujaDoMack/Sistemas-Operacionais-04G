@@ -92,7 +92,7 @@ int main() {
   fprintf(output, "Tempo gasto: %d segundos\n", lastMoment);
   fclose(output);
   
-  printf("Tempo gasto: %d", lastMoment);
+  printf("Tempo gasto: %d\n", lastMoment);
   
 
   return 0;
