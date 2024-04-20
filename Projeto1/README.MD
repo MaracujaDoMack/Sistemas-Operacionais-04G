@@ -34,7 +34,8 @@ Todas os testes e seus respectivos resultados propostos estão em formato .txt p
 
 ## Exemplos de Inputs e Outputs com THREADS
 
-TIRA O PRINT DA EXECUÇÃO DE ALGUNS INPUTS E OUTPUTS GUSTAVÃO
+TESTE DE EXECUÇÃO COM THREADS(E_3)
+<img src="https://i.imgur.com/UeYlXKL.jpeg">
 
 ## Resolvendo por PROCESSOS
 
