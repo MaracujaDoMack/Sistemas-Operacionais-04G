@@ -13,7 +13,9 @@ sudo dnf install gcc
 Depois é necessario compilar os arquivos com o comando:
 
 gcc -o [nome_do executavel] [nome_do_arquivo]
+
 gcc -o proj Projeto1Processos.c
+
 gcc -o proj Projeto1Threads.c
 
 O ultimo passo seria executar o programa:
