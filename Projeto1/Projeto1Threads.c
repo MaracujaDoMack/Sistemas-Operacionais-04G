@@ -47,7 +47,6 @@ void *threadFunction(void *argument) {
 }
 
 int main() {
-  printf("Programa iniciado!\n\n");
 
   int amount = 0;
   pthread_t threadsVector[MAX_CAPACITY];
@@ -92,8 +91,9 @@ int main() {
 
   fprintf(output, "Tempo gasto: %d segundos\n", lastMoment);
   fclose(output);
-
-  printf("Programa finalizado!");
+  
+  print("Tempo gasto: %d"', lastMoment);
+  
 
   return 0;
 }
