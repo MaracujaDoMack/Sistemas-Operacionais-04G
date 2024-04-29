@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
+#include <unistd.h>
 
 int **mat;
 int *vet;
@@ -70,7 +71,7 @@ int main()
     // threads
   
     pthread_t *threads = malloc(sizeof(pthread_t) * lMat);
-    int *thread_args = malloc(sizeof(pthread_t) * lMat);
+    int *thread_args = malloc(sizeof(int) * lMat);
   
     for(int i = 0; i < lMat; i++){
         thread_args[i] = i;
@@ -88,5 +89,18 @@ int main()
     }
     printf("\n");
 
+    // liberando memória
+    
+    free(threads);
+    free(thread_args);
+    
+    for (int i = 0; i < lMat; i++) {
+        free(mat[i]);
+    }
+    
+    free(mat);
+    free(vet);
+    free(result);
+    
     return 0;
 }
