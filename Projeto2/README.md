@@ -26,5 +26,7 @@ gcc proj2.c -o projeto2
 
 ### 1) A conta to pode receber mais de uma transferência simultânea;
 ### 2) A conta from pode enviar mais de uma transferência simultânea;
-<img src="https://i.imgur.com/16JuIwX.png" alt="Prova1">
-<img src="https://i.imgur.com/Si5SOh7.png" alt="Prova1">
+
+### 3) A conta from não pode enviar dinheiro se não tiver mais saldo;
+<img src="https://i.imgur.com/YZUKvWC.png" alt="Prova2">
+<img src="https://i.imgur.com/AW8Yxnf.png" alt="Prova2">
