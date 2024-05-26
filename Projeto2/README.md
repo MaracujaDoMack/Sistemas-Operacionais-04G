@@ -26,3 +26,5 @@ gcc proj2.c -o projeto2
 
 ### 1) A conta to pode receber mais de uma transferência simultânea;
 ### 2) A conta from pode enviar mais de uma transferência simultânea;
+<img src="https://i.imgur.com/16JuIwX.png" alt="Prova1">
+<img src="https://i.imgur.com/Si5SOh7.png" alt="Prova1">
