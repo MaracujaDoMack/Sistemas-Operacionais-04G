@@ -26,7 +26,16 @@ gcc proj2.c -o projeto2
 
 ### 1) A conta to pode receber mais de uma transferência simultânea;
 ### 2) A conta from pode enviar mais de uma transferência simultânea;
-
+---------------------
 ### 3) A conta from não pode enviar dinheiro se não tiver mais saldo;
-<img src="https://i.imgur.com/YZUKvWC.png" alt="Prova2">
-<img src="https://i.imgur.com/AW8Yxnf.png" alt="Prova2">
+-------------------
+### 4) A conta to pode trocar de ordem com a conta from, ou seja, a conta que enviava pode receber e a conta que recebia pode enviar;
+------------------
+### 5) Poderão ser realizadas até 100 transações simultâneas de transferência;
+----------------
+## Execução do programa
+### Caso 1: Duas contas transferindo o mesmo valor entre si;
+------------
+### Caso 2: Conta To enviando todo o dinheiro para From;
+------------------------
+
