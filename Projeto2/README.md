@@ -1,9 +1,11 @@
 # Projeto 2 - Sistemas Operacionais
 ## Tranferência de fundos entre duas contas
 
-Neste projeto, desenvolvemos um programa que realiza a transferência de fundos entre duas contas: To (destino) e From (origem). Essa tarefa é implementada declarando as duas contas globalmente e utilizando threads da biblioteca Pthreads do Linux. Cada thread tem acesso às contas através da memória compartilhada e representa uma transferência realizada entre elas. As transferências são feitas de forma concorrente apenas quando há saldo suficiente na conta de envio, permitindo que ocorram mais de uma transferência ao mesmo tempo. Para solucionar a condição de corrida gerada pela solução concorrente, utilizamos um mutex também da biblioteca Pthreads, que impede que mais de uma thread tenha acesso à região crítica de memória (o valor presente na conta de envio), além de não ultrapassar o número máximo de 100 transferências totais. Nosso programa ainda permite que o dinheiro seja enviado da conta To durante a execução, obedecendo às regras impostas anteriormente.
+Neste projeto, desenvolvemos um programa para transferir fundos entre duas contas: uma conta destino (To) e uma conta origem (From). A implementação utiliza a biblioteca Pthreads do Linux, declarando as contas globalmente. Cada thread, representando uma transferência, acessa essas contas via memória compartilhada. As transferências ocorrem simultaneamente, desde que haja saldo suficiente na conta de origem, permitindo múltiplas operações ao mesmo tempo.
 
-Para realizar os testes, usamos duas abordagens, a primeira ambas as direções de transferência enviam o mesmo valor(100), e na segunda valores diferentes(100 e 0).
+Para resolver a condição de corrida gerada pela execução concorrente, utilizamos um mutex da biblioteca Pthreads. Isso garante que apenas uma thread acesse a região crítica da memória (o saldo da conta de origem) por vez. Também limitamos o número máximo de transferências a 100. Além disso, o programa permite a transferência de fundos da conta destino (To) durante a execução, obedecendo às mesmas regras.
+
+Para testar o programa, utilizamos duas abordagens: na primeira, ambas as transferências enviam o mesmo valor (100); na segunda, os valores transferidos são diferentes (100 e 0).
 
 ## Para compilar o programa: 
 Instalamos o editor vim:
