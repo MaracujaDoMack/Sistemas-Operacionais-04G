@@ -9,11 +9,11 @@ Nos testes, adotamos duas abordagens: na primeira, as transferências em ambas a
 
 
 ## Para compilar o programa: 
-Instalamos o compilador gcc:
+Instalar o compilador gcc:
 ```bash
 sudo dnf install gcc
 ```
-E então compilamos o arquivo .c
+Compilar o arquivo .c
 ```bash
 gcc proj2.c -o projeto2
 ```
