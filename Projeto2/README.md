@@ -1,4 +1,4 @@
-# Projeto 2 - Sistemas Operacionais - Transferências
+# Projeto 2 - Sistemas Operacionais - Transferências entre contas
 
 ## Explicação
 
