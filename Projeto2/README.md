@@ -26,7 +26,7 @@ gcc codigo.c -o exe1
 Compile e execute, seguindo os passos acima.
 
 
-É possível alterar o valor das variávis 'valor1' e 'valor2' para que a quantidade de dinheiro nas transferências mude.
+É possível alterar o valor das variáveis 'valor1' e 'valor2' para que a quantidade de dinheiro nas transferências mude.
 
 'valor1' é o valor que a conta FROM envia para a conta TO (linha 79).
 
