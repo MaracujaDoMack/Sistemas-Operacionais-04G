@@ -17,12 +17,15 @@ Compilar o arquivo .c
 ```bash
 gcc codigo.c -o exe1
 ```
+![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/158c74a3-0073-4879-b3ce-f1909090f5dd)
+
 
 ## Para executar o programa:
 ```bash
 ./exe1
 ```
-![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/0588cf80-1d44-4cea-a9af-f85711355e5f)
+![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/f0d10691-9a76-42e4-8663-b96bad6dbec3)
+
 
 ## Comprovar que os resultados propostos foram alcançados:
 
