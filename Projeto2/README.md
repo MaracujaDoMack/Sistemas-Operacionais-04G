@@ -1,4 +1,4 @@
-# Projeto 2 - Sistemas Operacionais - Transferências
+![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/340cd63b-01d1-4129-a19c-6edc0ca2708f)# Projeto 2 - Sistemas Operacionais - Transferências
 ## Tranferência de fundos entre duas contas
 
 Desenvolvemos um programa que realiza transferências de fundos entre duas contas, uma de destino (To) e outra de origem (From), utilizando a biblioteca Pthreads do Linux. As contas são declaradas globalmente, e cada thread representa uma transferência, acessando essas contas via memória compartilhada. As transferências ocorrem simultaneamente, desde que haja saldo suficiente na conta de origem, permitindo múltiplas operações ao mesmo tempo.
@@ -40,6 +40,9 @@ Sim, a conta FROM pode enviar mais de uma transferência simultânea graças ao 
 ### Imagem referente aos tópicos 1 e 2:
 
 ![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/30e7e56a-7203-42c3-a840-2016b1be39a8)
+![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/5f6aa653-edf7-4ec6-98e9-0ab3ba03c1d3)
+![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/12e7db9f-d524-44b1-afd9-4acce8846a4c)
+
 
 ---------------------
 ### 3 -  A conta from não pode enviar dinheiro se não tiver mais saldo;
