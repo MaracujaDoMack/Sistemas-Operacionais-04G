@@ -22,6 +22,8 @@ gcc codigo.c -o exe1
 ```bash
 ./exe1
 ```
+![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/0588cf80-1d44-4cea-a9af-f85711355e5f)
+
 ## Comprovar que os resultados propostos foram alcançados:
 
 ### 1) A conta to pode receber mais de uma transferência simultânea;
