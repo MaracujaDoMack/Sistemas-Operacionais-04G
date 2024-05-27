@@ -1,4 +1,4 @@
-![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/340cd63b-01d1-4129-a19c-6edc0ca2708f)# Projeto 2 - Sistemas Operacionais - Transferências
+# Projeto 2 - Sistemas Operacionais - Transferências
 ## Tranferência de fundos entre duas contas
 
 Desenvolvemos um programa que realiza transferências de fundos entre duas contas, uma de destino (To) e outra de origem (From), utilizando a biblioteca Pthreads do Linux. As contas são declaradas globalmente, e cada thread representa uma transferência, acessando essas contas via memória compartilhada. As transferências ocorrem simultaneamente, desde que haja saldo suficiente na conta de origem, permitindo múltiplas operações ao mesmo tempo.
@@ -25,6 +25,12 @@ gcc codigo.c -o exe1
 ./exe1
 ```
 ![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/f0d10691-9a76-42e4-8663-b96bad6dbec3)
+
+## Código
+
+![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/d1050936-fdfa-409d-a60c-079f8d04276e)
+
+![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/88ad0c57-693b-4304-a53b-29c4a1b9c568)
 
 
 ## Comprovar que os resultados propostos foram alcançados:
