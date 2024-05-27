@@ -15,12 +15,12 @@ sudo dnf install gcc
 ```
 Compilar o arquivo .c
 ```bash
-gcc exe1.c -o codigo.c
+gcc codigo.c -o exe1.c
 ```
 
 ## Para executar o programa:
 ```bash
-./exe2.c
+./exe1.c
 ```
 ## Comprovar que os resultados propostos foram alcançados:
 
