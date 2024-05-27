@@ -26,9 +26,10 @@ void *transferencia1(void *arg) {
   if (from.saldo >= valor1) {
     from.saldo -= valor1;
     to.saldo += valor1;
-  }
-  else{
+  } else {
     printf("Erro! Saldo insuficiente da conta FROM!\n\n");
+    sem_post(&mutex);
+    return NULL;
   }
 
   printf("Transferência concluída com sucesso!\n");
@@ -50,9 +51,10 @@ void *transferencia2(void *arg) {
   if (to.saldo >= valor2) {
     to.saldo -= valor2;
     from.saldo += valor2;
-  }
-  else{
+  } else {
     printf("Erro! Saldo insuficiente da conta TO!\n\n");
+    sem_post(&mutex);
+    return NULL;
   }
 
   printf("Transferência concluída com sucesso!\n");
@@ -81,11 +83,11 @@ int main() {
   printf("Saldo inicial da conta TO: %d\n\n", to.saldo);
 
   int i;
-  
+
   // criação das threads
-  for (i = 0; i < MAX_TRANSACOES/2; i++) {
+  for (i = 0; i < MAX_TRANSACOES / 2; i++) {
     pthread_create(&(threads[i]), NULL, transferencia1, NULL);
-    pthread_create(&(threads[i + (MAX_TRANSACOES/2)]), NULL, transferencia2, NULL);
+    pthread_create(&(threads[i + (MAX_TRANSACOES / 2)]), NULL, transferencia2, NULL);
   }
 
   for (i = 0; i < MAX_TRANSACOES; i++) {
@@ -94,7 +96,7 @@ int main() {
 
   sem_destroy(&mutex); // finalização do semáforo
 
-  printf("Transferências concluídas e memória liberada.\n\nPrograma finalizado!\n");
+  printf("Transferências concluídas e memória liberada.\n\nSaldo final da conta TO: %d\nSaldo final da conta FROM: %d\n\nPrograma finalizado!\n", to.saldo, from.saldo);
 
   return 0;
 }
