@@ -20,7 +20,7 @@ gcc codigo.c -o exe1
 
 ## Para executar o programa:
 ```bash
-./exe1.c
+./exe1
 ```
 ## Comprovar que os resultados propostos foram alcançados:
 
