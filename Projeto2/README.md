@@ -37,7 +37,7 @@ Sim, a conta TO pode receber mais de uma transferência simultânea graças ao u
 
 Sim, a conta FROM pode enviar mais de uma transferência simultânea graças ao uso de threads na execução do programa.
 
-###Imagem referente aos tópicos 1 e 2:
+### Imagem referente aos tópicos 1 e 2:
 
 ![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/30e7e56a-7203-42c3-a840-2016b1be39a8)
 
