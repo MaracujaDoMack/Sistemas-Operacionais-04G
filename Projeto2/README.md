@@ -2,7 +2,7 @@
 
 ## Explicação
 
-
+O projeto consiste em possibilitar a transferência de valores entre duas contas bancarias (TO e FROM), sendo possível realizar 100 transações simultâneas e a troca de quem irá receber e quem irá enviar o valor. Para implementar o sistema, utilizamos dois fluxos de threads para os envios simultâneos entre contas, um deles a conta TO envia e a conta FROM recebe, e no outro a conta FROM envia e a conta TO recebe. Com isso, tivemos que tratar do problema de concorrência e da condição de corrida, criando assim um semáforo, bloquando o acesso a threads, para que quando uma das threads esteja na zona crítica (atualizando o valor de cada conta), outra thread não interfira, mantendo assim a integridade e a confiabilidade dos dados no sistema.
 
 ## Para compilar o programa
 Instalar o compilador gcc:
@@ -28,9 +28,9 @@ Compile e execute, seguindo os passos acima.
 
 É possível alterar o valor das variávis 'valor1' e 'valor2' para que a quantidade de dinheiro nas transferências mude.
 
-valor1 é o valor que a conta FROM envia para a conta TO.
+'valor1' é o valor que a conta FROM envia para a conta TO (linha 79).
 
-valor2 é o valor que a conta TO envia para a conta FROM.
+'valor2' é o valor que a conta TO envia para a conta FROM (linha 80).
 
 ## Código
 
@@ -82,6 +82,5 @@ Sim, é possível realizar 100 transações simultâneas com um loop de 50 itera
 ![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/49b1e732-908b-4f38-8bb3-e52f2b6d9ae3)
 
 ![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/718184e0-27aa-4972-aa43-69f8c01139e9)
-
 
 ----------------
