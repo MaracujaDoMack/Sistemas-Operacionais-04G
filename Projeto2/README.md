@@ -82,5 +82,3 @@ Sim, é possível realizar 100 transações simultâneas com um loop de 50 itera
 ![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/49b1e732-908b-4f38-8bb3-e52f2b6d9ae3)
 
 ![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/718184e0-27aa-4972-aa43-69f8c01139e9)
-
-----------------
