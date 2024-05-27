@@ -57,14 +57,25 @@ Sim, a conta FROM pode enviar mais de uma transferência simultânea graças ao 
 
 Tanto a conta FROM quanto a conta TO não podem enviar dinheiro caso não tenham o saldo suficiente, o que é verificado dentro das funções que serão executadas pelas threads.
 
+![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/d795523b-da47-4564-a2c2-d3a9bae7ebaa)
+
 -------------------
 ### 4 - A conta to pode trocar de ordem com a conta from, ou seja, a conta que enviava pode receber e a conta que recebia pode enviar;
 
 Sim, tanto uma como outra pode enviar dinheiro. Para possibilitar isso, foram criados dois fluxos de threads em um loop, os quais executarão uma das duas funções de transferência (FROM pra TO / TO pra FROM).
 
+![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/99ad5859-ae87-4b31-b091-4a55a54ee7a8)
+
+![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/a67aff96-f290-408f-adb1-addf0d0307d7)
+
 ------------------
 ### 5 - Poderão ser realizadas até 100 transações simultâneas de transferência;
 
 Sim, é possível realizar 100 transações simultâneas com um loop de 50 iterações, cada uma criando 2 threads.
+
+![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/49b1e732-908b-4f38-8bb3-e52f2b6d9ae3)
+
+![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/718184e0-27aa-4972-aa43-69f8c01139e9)
+
 
 ----------------
