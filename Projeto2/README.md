@@ -32,6 +32,8 @@ Compile e execute, seguindo os passos acima.
 
 'valor2' é o valor que a conta TO envia para a conta FROM (linha 80).
 
+Por padrão, o valor que colocamos foi de 10 para cada variável.
+
 ## Código
 
 ![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/8f6d5358-911a-4b3b-ada7-f988b3506d06)
