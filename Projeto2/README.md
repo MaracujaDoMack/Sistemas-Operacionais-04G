@@ -84,3 +84,12 @@ Sim, é possível realizar 100 transações simultâneas com um loop de 50 itera
 ![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/49b1e732-908b-4f38-8bb3-e52f2b6d9ae3)
 
 ![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/718184e0-27aa-4972-aa43-69f8c01139e9)
+
+------------------
+
+## Teste para saldo insuficiente
+
+Atribuimos o valor 100 para ambos os variáveis 'valor1' e 'valor2' para testar quando há um caso de saldo insuficiente
+
+![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/1277f047-b70c-4d10-b3ae-14cd99130b66)
+
