@@ -31,6 +31,7 @@ gcc codigo.c -o exe1
 
 ### 1) A conta to pode receber mais de uma transferência simultânea;
 ### 2) A conta from pode enviar mais de uma transferência simultânea;
+![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/b27af5cf-b352-46d6-87de-c7e9bba31fba)
 ---------------------
 ### 3) A conta from não pode enviar dinheiro se não tiver mais saldo;
 -------------------
