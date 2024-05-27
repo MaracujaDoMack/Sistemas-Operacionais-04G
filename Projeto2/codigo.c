@@ -27,6 +27,9 @@ void *transferencia1(void *arg) {
     from.saldo -= valor1;
     to.saldo += valor1;
   }
+  else{
+    printf("Erro! Saldo insuficiente da conta FROM!\n\n");
+  }
 
   printf("Transferência concluída com sucesso!\n");
   printf("Saldo de FROM: %d\n", from.saldo);
@@ -47,6 +50,9 @@ void *transferencia2(void *arg) {
   if (to.saldo >= valor2) {
     to.saldo -= valor2;
     from.saldo += valor2;
+  }
+  else{
+    printf("Erro! Saldo insuficiente da conta TO!\n\n");
   }
 
   printf("Transferência concluída com sucesso!\n");
