@@ -30,20 +30,30 @@ gcc codigo.c -o exe1
 ## Comprovar que os resultados propostos foram alcançados:
 
 ### 1) A conta to pode receber mais de uma transferência simultânea;
+
 Sim, a conta TO pode receber mais de uma transferência simultânea graças ao uso de threads na execução do programa. 
+
 ### 2) A conta from pode enviar mais de uma transferência simultânea;
+
 Sim, a conta FROM pode enviar mais de uma transferência simultânea graças ao uso de threads na execução do programa.
+
 ###Imagem referente aos tópicos 1 e 2:
 ![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/30e7e56a-7203-42c3-a840-2016b1be39a8)
 ---------------------
 ### 3) A conta from não pode enviar dinheiro se não tiver mais saldo;
+
 Tanto a conta FROM quanto a conta TO não podem enviar dinheiro caso não tenham o saldo suficiente, o que é verificado dentro das funções que serão executadas pelas threads.
+
 -------------------
 ### 4) A conta to pode trocar de ordem com a conta from, ou seja, a conta que enviava pode receber e a conta que recebia pode enviar;
+
 Sim, tanto uma como outra pode enviar dinheiro. Para possibilitar isso, foram criados dois fluxos de threads em um loop, os quais executarão uma das duas funções de transferência (FROM pra TO / TO pra FROM).
+
 ------------------
 ### 5) Poderão ser realizadas até 100 transações simultâneas de transferência;
+
 Sim, é possível realizar 100 transações simultâneas com um loop de 50 iterações, cada uma criando 2 threads.
+
 ----------------
 ## Execução do programa
 ### Caso 1: Duas contas transferindo o mesmo valor entre si;
