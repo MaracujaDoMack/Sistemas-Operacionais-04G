@@ -76,6 +76,8 @@ Sim, tanto uma como outra pode enviar dinheiro. Para possibilitar isso, foram cr
 
 ![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/a67aff96-f290-408f-adb1-addf0d0307d7)
 
+![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/43621431-15de-4882-9150-c4b56a5a2ef2)
+
 ------------------
 ### 5 - Poderão ser realizadas até 100 transações simultâneas de transferência
 
