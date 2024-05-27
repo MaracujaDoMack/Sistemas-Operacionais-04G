@@ -1,78 +1,94 @@
 #define _GNU_SOURCE
-#include <malloc.h>
-#include <sched.h>
+#include <pthread.h>
 #include <semaphore.h>
-#include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/types.h>
-#include <sys/wait.h>
 
-#define FIBER_STACK 1024 * 64
+#define MAX_TRANSACOES 100 // número máximo de transações simultaneas
 
 struct c {
   int saldo;
 };
-
 typedef struct c conta;
+
 conta from, to;
-int valor;
+int valor1, valor2;
 
 sem_t mutex;
 
-int transferencia(void arg) {
+// transferencia de from pra to
+void *transferencia1(void *arg) {
 
   sem_wait(&mutex);
 
-  if (from.saldo >= valor) {
-    from.saldo -= valor;
-    to.saldo += valor;
+  printf("Transferindo %d da conta FROM para a conta TO\n", valor1);
+
+  if (from.saldo >= valor1) {
+    from.saldo -= valor1;
+    to.saldo += valor1;
   }
 
   printf("Transferência concluída com sucesso!\n");
-  printf("Saldo de c1: %d\n", from.saldo);
-  printf("Saldo de c2: %d\n\n", to.saldo);
+  printf("Saldo de FROM: %d\n", from.saldo);
+  printf("Saldo de TO: %d\n\n", to.saldo);
 
   sem_post(&mutex);
 
-  return 0;
+  return NULL;
+}
+
+// transferencia de to pra from
+void *transferencia2(void *arg) {
+
+  sem_wait(&mutex);
+
+  printf("Transferindo %d da conta TO para a conta FROM\n", valor2);
+
+  if (to.saldo >= valor2) {
+    to.saldo -= valor2;
+    from.saldo += valor2;
+  }
+
+  printf("Transferência concluída com sucesso!\n");
+  printf("Saldo de TO: %d\n", to.saldo);
+  printf("Saldo de FROM: %d\n\n", from.saldo);
+
+  sem_post(&mutex);
+
+  return NULL;
 }
 
 int main() {
-  voidstack;
-  pid_t pids[100];
-  int i;
 
-  sem_init(&mutex, 0, 1);
+  printf("Programa das transferências iniciado!\n\n");
+
+  pthread_t threads[MAX_TRANSACOES]; // vetor de threads
+
+  sem_init(&mutex, 0, 1); // inicialização do semáforo
 
   from.saldo = 100;
   to.saldo = 100;
-  valor = 1;
+  valor1 = 10; // valor que será transefido de from pra to
+  valor2 = 10; // valor que será transefido de to pra from
 
-  printf("Transferindo %d para a conta c2\n", valor);
+  printf("Saldo inicial da conta FROM: %d\n", from.saldo);
+  printf("Saldo inicial da conta TO: %d\n\n", to.saldo);
 
-  for (i = 0; i < 100; i++) {
-    stack = malloc(FIBER_STACK);
-    if (stack == 0) {
-      perror("malloc: could not allocate stack");
-      exit(1);
-    }
-    pids[i] =
-        clone(&transferencia, (char *)stack + FIBER_STACK, SIGCHLD | CLONE_FS | CLONE_FILES | CLONE_SIGHAND | CLONE_VM, 0);
-    if (pids[i] == -1) {
-      perror("clone");
-      exit(2);
-    }
+  int i;
+  
+  // criação das threads
+  for (i = 0; i < MAX_TRANSACOES/2; i++) {
+    pthread_create(&(threads[i]), NULL, transferencia1, NULL);
+    pthread_create(&(threads[i + (MAX_TRANSACOES/2)]), NULL, transferencia2, NULL);
   }
 
-  for (i = 0; i < 100; i++) {
-    waitpid(pids[i], NULL, 0);
-    free(stack);
+  for (i = 0; i < MAX_TRANSACOES; i++) {
+    pthread_join(threads[i], NULL);
   }
 
-  sem_destroy(&mutex);
+  sem_destroy(&mutex); // finalização do semáforo
 
-  printf("Transferências concluídas e memória liberada.\n");
+  printf("Transferências concluídas e memória liberada.\n\nPrograma finalizado!\n");
 
   return 0;
 }
