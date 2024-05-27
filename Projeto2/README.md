@@ -33,7 +33,7 @@ gcc codigo.c -o exe1
 ![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/67551a50-fcd9-4797-a80c-6c3bdd7d6dfc)
 
 
-## Comprovar que os resultados propostos foram alcançados:
+## Comprovação dos requisitos:
 
 ### 1 - A conta to pode receber mais de uma transferência simultânea;
 
@@ -68,9 +68,3 @@ Sim, tanto uma como outra pode enviar dinheiro. Para possibilitar isso, foram cr
 Sim, é possível realizar 100 transações simultâneas com um loop de 50 iterações, cada uma criando 2 threads.
 
 ----------------
-## Execução do programa
-### Caso 1: Duas contas transferindo o mesmo valor entre si;
-------------
-### Caso 2: Conta To enviando todo o dinheiro para From;
-------------------------
-
