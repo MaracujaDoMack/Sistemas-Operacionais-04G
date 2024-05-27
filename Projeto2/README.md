@@ -28,9 +28,9 @@ gcc codigo.c -o exe1
 
 ## Código
 
-![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/d1050936-fdfa-409d-a60c-079f8d04276e)
+![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/8f6d5358-911a-4b3b-ada7-f988b3506d06)
 
-![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/88ad0c57-693b-4304-a53b-29c4a1b9c568)
+![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/67551a50-fcd9-4797-a80c-6c3bdd7d6dfc)
 
 
 ## Comprovar que os resultados propostos foram alcançados:
