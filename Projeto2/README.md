@@ -89,7 +89,7 @@ Sim, é possível realizar 100 transações simultâneas com um loop de 50 itera
 
 ## Teste para saldo insuficiente (Item 3)
 
-Alteramos das variáveis 'valor1' e 'valor2' de 10 para 100 a fim de testar quando há um caso de saldo insuficiente.
+Alteramos o valor das variáveis 'valor1' e 'valor2' de 10 para 100 a fim de testar quando há um caso de saldo insuficiente.
 
 ![image](https://github.com/MaracujaDoMack/Sistemas-Operacionais-04G/assets/162309148/1277f047-b70c-4d10-b3ae-14cd99130b66)
 
