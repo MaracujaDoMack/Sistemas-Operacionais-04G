@@ -45,11 +45,11 @@ Por padrão, o valor que colocamos foi de 10 para cada variável.
 
 ### 1 - A conta to pode receber mais de uma transferência simultânea
 
-Sim, a conta TO pode receber mais de uma transferência simultânea graças ao uso de threads na execução do programa. 
+Sim, a conta TO pode receber mais de uma transferência simultânea graças ao uso de threads e semáforos na execução do programa. 
 
 ### 2 - A conta from pode enviar mais de uma transferência simultânea
 
-Sim, a conta FROM pode enviar mais de uma transferência simultânea graças ao uso de threads na execução do programa.
+Sim, a conta FROM pode enviar mais de uma transferência simultânea graças ao uso de threads e semáforos na execução do programa.
 
 ### Imagem referente aos tópicos 1 e 2:
 
